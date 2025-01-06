@@ -1,19 +1,101 @@
-/************************* DEBUG SETTINGS *************************/
+/* Basisstijl voor de hele pagina */
+body {
+   font-family: 'Arial', sans-serif;
+   margin: 0; /* Verwijdert standaardmarges */
+   padding: 0; /* Verwijdert standaardpadding */
+   background-color: #f3f4f6;
+   color: #333;
+   line-height: 1.6;
+}
 
-/* Settings to help find errors in your css
-   uncomment to enable */
+/* CSS Grid Container */
+.grid-container {
+   display: grid; /* Activeert CSS Grid */
+   grid-template-areas: 
+       "header header"   /* Header over twee kolommen */
+       "header header"   /* Header over twee kolommen */
+       "header header"   /* Header over twee kolommen */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "main main"      /* Main links, zijbalk rechts */
+       "footer footer"  /* Footer over twee kolommen */
+       "footer footer";  /* Footer over twee kolommen */
+   grid-template-columns: 3fr 1fr; /* Main krijgt 3 delen, aside 1 deel */
+   grid-template-rows: auto 1fr auto; /* Hoogteverdeling */
+   gap: 15px; /* Ruimte tussen grid-items */
+   padding: 15px;
+   height: 100vh;
+}
 
-/* Add dotted line around all boxes.
-   This makes size of boxes visible.
-   Warning 1: this settings may change your layout.
-   Warning 2: keep the * as selector for all tags when uncommenting. */
-/*  * {border: 1px dotted black;}   */
-  
-/* Add semi-transparant dark background to all boxes
-   The more boxes are on top of eachother the darker tghe background color
-   Warning: keep the * as selector for all tags when uncommenting. */
-/*  * {background-color: rgba(0,0,0,5%);}  */
+/* Header */
+.header {
+   grid-area: header;
+   padding: 20px;
+   text-align: center;
+   font-size: 1.5rem;
+   background-color: #6C5B7B;
+   color: white;
+}
 
-/************************* YOUR SETTINGS *************************/
+/* Main Content */
+.main {
+   grid-area: main;
+   background-color: white;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-/* add your css here, feel free to use comments and order them logically for better readability */
+/* Container voor artikelen */
+.articles-container {
+   display: flex; /* Grid layout voor artikelen. Dit is dus een grid IN een grid! Dat kan :) */
+   flex-direction: column;
+}
+
+/* Artikelen */
+.article {
+   background-color: #e49273ff;
+   padding: 15px;
+   border: 1px solid #ddd;
+   border-radius: 30px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   margin-bottom: 15px;
+}
+
+.article img {
+   max-width: 100%;
+   border-radius: 5px;
+   margin-bottom: 10px;
+}
+
+.article:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Zijbalk */
+.aside {
+   grid-area: aside;
+   background-color: #ecf0f1;
+   padding: 20px;
+   border-left: 3px solid #6C5B7B;
+   border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+   grid-area: footer;
+   padding: 10px;
+   text-align: center;
+   background-color: #6C5B7B;
+   color: white;
+}
