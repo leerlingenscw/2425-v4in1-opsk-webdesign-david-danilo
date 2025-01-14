@@ -1,27 +1,42 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>cybersecurity</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maatregelen</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!-- Creëert hamburger logo -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Linkjes in hamburger menu -->
+    <nav class="menu" id="menu">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/Digitale veiligheid/index.html">Digitale Veiligheid</a></li>
+            <li><a href="/Bedreigingen/index.html">Bedreigingen</a></li>
+            <li><a href="/Aanvallers & verdedigers/index.html">Aanvallers & Verdedigers</a></li>
+        </ul>
+    </nav>
+
+    <!-- Javascript (: -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+
+    <!-- Header -->
     <h1>
         Maatregelen
     </h1>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <div class="nav-mobile">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
-        </div>
-      </nav>
 </body>
+</html>

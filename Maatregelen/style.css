@@ -1,44 +1,73 @@
-nav {
-    padding: 1.5rem 2rem;
-    background-color: #222831;
-    color: #fff;
+body {
+    margin: 0; /*Verwijdert standaardmarges*/
+    font-family: Arial, sans-serif;
 }
-.nav-mobile {
-    display: none;
-}
-#check:checked ~ .nav-mobile {
-    display: block;
-   }
-.nav-mobile {
+
+/*Hamburger icoon stylen*/
+.hamburger {
     position: absolute;
-    top: 4.5rem;
-    left: 0;
-    background: #222831;
-    z-index: 1;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column; /*Zorgt dat de drie streepjes onder elkaar komen*/
+    justify-content: space-between; /*Gelijke ruimte tussen de streepjes en de streepjes in een vierkant*/
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1000; /*Zet het hamburgermenu op laag 1000 (waarschijnlijk bovenaan)*/
+}
+
+.hamburger div {
+    background-color: #333;
+    height: 4px;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/*Menu stylen*/
+.menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
     width: 200px;
+    height: auto; /*Hoogte aanpassen aan de text in het menu*/
+    background-color: #f4f4f4;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(-110%); /*X naar links uit beeld schuiven*/
+    transition: transform 0.3s ease;
+    border-radius: 8px; /*Hoeken ronding geven*/
+    overflow: hidden; /*Items buiten menu verbergen*/
 }
-.nav-mobile a {
-    color: #fff;
-    padding: 1rem 1.5rem;
-    display: block;
+
+.menu ul {
+    list-style: none; /*Puntjes of lijst aanduidende symbolen weglaten*/
+    padding: 20px 10px 10px; /*Zorgen dat text niet met hamburger icoon clipt*/
 }
-<div class="nav-mobile w3-animate-right">
- <!-- Menu items -->
-</div>
-@media only screen and (max-width: 992px) {
-    .checkbtn {
-    display: block;
-    font-size: 5rem;
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    }
-   .nav-mobile {
-    top: 160px;
-    width: 100%;
-    }
-   .nav-mobile a {
-    font-size: 2rem;
-    padding: 2rem 3rem;
-    }
-   }
+
+.menu ul li {
+    margin: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none; /*Haalt de text decoratie van een linkje weg*/
+    color: #333;
+    font-size: 16px;
+}
+
+/*Laat menu zien wanneer actief*/
+.menu.active {
+    transform: translateX(0);
+}
+
+/*Hamburger animatie voor wanneer actief*/
+.hamburger.active div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}

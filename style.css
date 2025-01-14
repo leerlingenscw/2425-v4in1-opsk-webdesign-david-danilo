@@ -1,141 +1,159 @@
-/* Basisstijl voor de hele pagina */
+/*Basisstijl voor de hele pagina*/
 body {
    font-family: 'Arial', sans-serif;
-   margin: 0; /* Verwijdert standaardmarges */
-   padding: 0; /* Verwijdert standaardpadding */
+   margin: 0; /*Verwijdert standaardmarges*/
+   padding: 0; /*Verwijdert standaardpadding*/
    background-color: #000000ff;
    color: #333;
    line-height: 1.6;
 }
 
-/* CSS Grid Container */
+/*CSS Grid Container*/
 .grid-container {
-   display: grid; /* Activeert CSS Grid */
-   grid-template-areas: 
-       "header"   /* Header over twee kolommen */
-       "header"   /* Header over twee kolommen */
-       "header"   /* Header over twee kolommen */
-       "bar"        /*zwarte bar over tweekolommen*/
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "main"      /* Main links, zijbalk rechts */
-       "footer"  /* Footer over twee kolommen */
-       "footer";  /* Footer over twee kolommen */
-   grid-template-columns: 3fr; /* Main krijgt 3 delen, aside 1 deel */
-   
-   gap: 0px; /* Ruimte tussen grid-items */
-   padding: 0px;
-   height: 100vh;
+   display: grid; /*Activeert CSS Grid*/
+   grid-template-areas:  /*Maakt de onderverdeling van de Grid */
+       "header"
+       "header"
+       "header"
+       "bar"
+       "main"
+       "main"
+       "main"
+       "main"
+       "main"
+       "main"
+       "main"
+       "main"
+       "main"
+       "main"
+       "footer"
+       "footer"; 
+   height: 100vh; /*Stelt de hoogte van de grid gelijk aan de hoogte van het beeldscherm*/
 }
 
-/* Header */
+/*Header*/
 .header {
    grid-area: header;
-   padding: 0,1%;
-   text-align: center;
+   display: flex;
+   align-items: center; /*Verticaal centreren*/
+   justify-content: center; /*Horizontaal centreren*/
+   padding: 2em;
+   max-height: 5em;
    font-size: 1.5rem;
    background-color: #0081a7ff;
    color: #000000;
+   overflow: hidden; /*Zorgt ervoor dat delen van de header die de oorsprongkelijke afmeting van de header overschrijden niet zichtbaar zijn*/
 }
 
-/*bar*/
+/*Bar*/
 .bar {
    grid-area: bar;
    background-color: #000000;
    color: #000000;
+   height: 1em;
 }
 
-/* Main Content */
+/*Main Content*/
 .main {
    grid-area: main;
    background-color: #a6b1e1ff;
    padding: 20px;
-   border-radius: 0px;
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Container voor artikelen */
+/*Container voor artikelen*/
 .articles-container {
-   display: flex; /* Grid layout voor artikelen. Dit is dus een grid IN een grid! Dat kan :) */
-   flex-direction: column;
+   display: flex; /*Flex layout om makkelijk kolom te creëeren*/
+   flex-direction: column; /*Kies voor kolom in plaats van rijen*/
    width: 65%;
-   justify-self:center;
+   justify-self:center; /*Zet de flex boxes in het midden op de horizontale as*/
 }
 
-/* Artikelen */
+/*Artikelen*/
 .article {
    background-color: #e49273ff;
    padding: 15px;
    border: 1px solid #ddd;
-   border-radius: 30px;
+   border-radius: 30px; /*Geeft de hoeken van de article boxes een kleine ronding*/
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    text-align: left;
+   text-decoration: none; /*Haalt de text decoratie van een linkje weg*/
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    margin: 15px;
+   overflow: hidden; /*Zorgt ervoor dat dingen buiten het artikel niet zichtbaar zijn*/
+}
+
+.article h3 {
+   margin-top: 0; /*Zorgt dat de header niet te ver naar onder gaat*/
+   margin-left: 9.5em; /*Mooie afstand van de afbeelding */
+}
+
+.article p {
+   margin-left: 12.5em; /*Verschuift de paragraaf verder naar rechts*/
+   margin-top: 0.5em; /*Zorgt voor wat ruimte tussen de header en de paragraaf*/
 }
 
 #img1 {
+   float: left; /*Zorgt dat de afbeelding mooi aan de linkerkant van het artikel blijft*/
+   margin-right: 1.2em;
    width: 10em;
    height: 10em;
-   object-fit: cover;
-   object-position: 88% 0%; 
-   border-radius: 50%;
+   object-fit: cover; /*Zorgt dat de afbeelding zijn container opvult zonder uit verhouding te gaan*/
+   object-position: 88% 0%; /*Afbeelding op de goede positie in de container zetten*/
+   border-radius: 50%; /*Container rond maken*/
    margin-bottom: 10px;
 }
 
 #img2 {
+   float: left; /*Zorgt dat de afbeelding mooi aan de linkerkant van het artikel blijft*/
+   margin-right: 1em;
    width: 10em;
    height: 10em;
-   object-fit: cover;
-   object-position: 25% 25%; 
-   border-radius: 50%;
+   object-fit: cover; /*Zorgt dat de afbeelding zijn container opvult zonder uit verhouding te gaan*/
+   object-position: 25% 25%; /*Afbeelding op de goede positie in de container zetten*/
+   border-radius: 50%; /*Container rond maken*/
    margin-bottom: 10px;
 }
 
 #img3 {
+   margin-right: 1em;
    width: 10em;
    height: 10em;
-   object-fit: cover;
-   object-position: 48% 25%; 
-   border-radius: 50%;
+   object-fit: cover; /*Zorgt dat de afbeelding zijn container opvult zonder uit verhouding te gaan*/
+   object-position: 48% 25%; /*Afbeelding op de goede positie in de container zetten*/
+   border-radius: 50%; /*Container rond maken*/
+   margin-bottom: 10px;
+}
+
+#img4-container {
+   float: left; /*Zorgt dat de container links uitlijnt*/
+   width: 10em;
+   height: 10em;
+   border-radius: 50%; /*Maakt de container rond*/
+   overflow: hidden; /*Verbergt alles buiten de container*/
+   margin-right: 1em;
    margin-bottom: 10px;
 }
 
 #img4 {
-   width: 10em;
-   height: 10em;
-   object-fit: cover;
-   object-position: 25% 25%; 
-   border-radius: 50%;
-   margin-bottom: 10px;
+   width: 100%; /*Vul de container volledig*/
+   height: 100%; /*Vult de container volledig*/
+   transform: scale(1.8); /*Zoomt verder in*/
+   object-fit: cover; /*Zorgt dat de afbeelding zijn container opvult zonder uit verhouding te gaan*/
+   object-position: center;
 }
 
+/*Animatie wanneer muis over artikel hovert*/
 .article:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   transform: translateY(-0.8em); /*Artikel gaat omhoog*/
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /*Minder doorzichtige schaduw*/
 }
 
-/* Zijbalk */
-.aside {
-   grid-area: aside;
-   background-color: #ecf0f1;
-   padding: 20px;
-   border-left: 3px solid #6C5B7B;
-   border-radius: 5px;
-}
-
-/* Footer */
+/*Footer*/
 .footer {
    grid-area: footer;
    padding: 10px;
-   text-align: center;
+   text-align: center; /*Centreert text horizontaal*/
    background-color: #6C5B7B;
    color: white;
 }

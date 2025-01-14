@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>cybersecurity</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aanvallers & Verdedigers</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+    <!-- Creëert hamburger logo -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Linkjes in hamburger menu -->
+    <nav class="menu" id="menu">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/Digitale veiligheid/index.html">Digitale Veiligheid</a></li>
+            <li><a href="/Bedreigingen/index.html">Bedreigingen</a></li>
+            <li><a href="/Maatregelen/index.html">Maatregelen</a></li>
+        </ul>
+    </nav>
+
+    <!-- Javascript (: -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+
+    <!-- Header -->
     <h1>
-        Aanvallers & verdedigers
+        Aanvallers & Verdedigers
     </h1>
 </body>
+
+</html>
