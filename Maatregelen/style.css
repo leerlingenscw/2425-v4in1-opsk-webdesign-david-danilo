@@ -6,8 +6,8 @@ body {
 /*Hamburger icoon stylen*/
 .hamburger {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 1em;
+    left: 1em;
     display: flex;
     flex-direction: column; /*Zorgt dat de drie streepjes onder elkaar komen*/
     justify-content: space-between; /*Gelijke ruimte tussen de streepjes en de streepjes in een vierkant*/
@@ -17,35 +17,37 @@ body {
     z-index: 1000; /*Zet het hamburgermenu op laag 1000 (waarschijnlijk bovenaan)*/
 }
 
+/*De streepjes*/
 .hamburger div {
     background-color: #333;
-    height: 4px;
-    border-radius: 2px;
+    height: 5px;
+    border-radius: 1em; /*Ronde randjes om streepjes hamburger icoon*/
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /*Menu stylen*/
 .menu {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 200px;
+    top: 0.5em;
+    left: 0.5em;
+    width: auto;
     height: auto; /*Hoogte aanpassen aan de text in het menu*/
     background-color: #f4f4f4;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.2);
     transform: translateX(-110%); /*X naar links uit beeld schuiven*/
     transition: transform 0.3s ease;
-    border-radius: 8px; /*Hoeken ronding geven*/
+    border-radius: 0.5em; /*Hoeken ronding geven*/
     overflow: hidden; /*Items buiten menu verbergen*/
 }
 
 .menu ul {
-    list-style: none; /*Puntjes of lijst aanduidende symbolen weglaten*/
-    padding: 20px 10px 10px; /*Zorgen dat text niet met hamburger icoon clipt*/
+    list-style: none; /*Puntjes/lijst aanduidende symbolen weglaten*/
+    padding: 1em 0.5em 0.5em; /*Zorgen dat text niet met hamburger icoon clipt*/
+    margin-right: 1em; /*zorgt dat de text niet gecentreerd staat (vind ik mooier)*/
 }
 
 .menu ul li {
-    margin: 10px;
+    margin: 0.7em; /*ruimte tussen de linkjes in het menu*/
 }
 
 .menu ul li a {
