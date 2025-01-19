@@ -81,7 +81,7 @@ body {
 .article {
    background-color: #e49273ff;
    padding: 15px;
-   border: 1px solid #ddd;
+   border: 1px solid #817878;
    border-radius: 30px; /*Geeft de hoeken van de article boxes een kleine ronding*/
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    text-align: left;
@@ -89,7 +89,7 @@ body {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    margin: 15px;
    overflow: hidden; /*Zorgt ervoor dat dingen buiten het artikel niet zichtbaar zijn*/
-   color:#274029;
+   color:#423e3e;
    font-size: 17pt;
 }
 

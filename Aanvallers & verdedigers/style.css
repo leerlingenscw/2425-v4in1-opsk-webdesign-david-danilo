@@ -3,8 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0; /*Verwijdert standaardmargin*/
     padding: 0; /*Verwijdert standaardpadding*/
-    background-color: #000000ff;
-    color: #333;
+    background-color: #000000;
+    color: #000000;
     line-height: 1.6;
  }
 
@@ -24,7 +24,7 @@ body {
 
 /*De streepjes*/
 .hamburger div {
-    background-color: #333;
+    background-color: #000000;
     height: 4px;
     border-radius: 1em; /*Ronde randjes om streepjes hamburger icoon*/
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -37,7 +37,8 @@ body {
     left: 0.5em;
     width: auto;
     height: auto; /*Hoogte aanpassen aan de text in het menu*/
-    background-color: #f4f4f4;
+    background-color: #e49273ff;
+    border: 1px solid #817878;
     box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.2);
     transform: translateX(-110%); /*X naar links uit beeld schuiven*/
     transition: transform 0.3s ease;
@@ -58,7 +59,7 @@ body {
 
 .menu ul li a {
     text-decoration: none; /*Haalt de text decoratie van een linkje weg*/
-    color: #333;
+    color: #000000;
     font-size: 16px;
 }
 
@@ -145,64 +146,33 @@ body {
 .articles-container {
     display: grid; /* Grid layout voor artikelen. Dit is dus een grid IN een grid! Dat kan :) */
     grid-template-columns: 1fr 1fr; /* 2 gelijke kolommen */
-    row-gap: 19.4em;
+    row-gap: 8em;
+    column-gap: 20em;
 }
 
-.artikel_1 {
-    background-color: #ffffff;
+.artikel_1, .artikel_2, .artikel_3, .artikel_4 {
+    height: 12em;
+    background-color: #e49273ff;
     padding: 10px;
-    margin-top: 9.7em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.afbeelding_1 {
-    background-color: #ffffff;
-    padding: 10px;
-    margin-top: 9.7em;
-    border: 1px solid #ddd;
+    border: 1px solid #817878;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.artikel_2 {
-    background-color: #ffffff;
-    padding: 10px;
-    border: 1px solid #ddd;
+.afbeelding_1, .afbeelding_2, .afbeelding_3, .afbeelding_4 {
+    height: 12em;
+    background-color: #4d9de0ff;
+    border: 1px solid #817878;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
-.afbeelding_2 {
-    background-color: #ffffff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.artikel_3 {
-    background-color: #ffffff;
-    padding: 10px;
-    margin-bottom: 9.7em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.afbeelding_3 {
-    background-color: #ffffff;
-    padding: 10px;
-    margin-bottom: 9.7em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.afbeelding_1 img, .afbeelding_2 img, .afbeelding_3 img, .afbeelding_4 img {
+    width: 100%; /* Zorgt dat de afbeelding de breedte van de container vult */
+    height: 100%; /* Zorgt dat de afbeelding de hoogte van de container vult */
+    object-fit: cover; /* Schaal de afbeelding proportioneel en vul de container */
+    border-radius: 5px; /* Zorg dat de afbeelding dezelfde afronding heeft als de container */
 }
 
  /*Footer*/
