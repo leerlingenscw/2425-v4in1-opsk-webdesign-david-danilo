@@ -1,90 +1,90 @@
-/*Basisstijl voor de hele pagina*/
+/* Basisstijl voor de hele pagina */
 body {
     font-family: Arial, sans-serif;
-    margin: 0; /*Verwijdert standaardmargin*/
-    padding: 0; /*Verwijdert standaardpadding*/
+    margin: 0; /* Verwijdert standaardmargin */
+    padding: 0; /* Verwijdert standaardpadding */
     background-color: #000000;
     color: #000000;
     line-height: 1.6;
  }
 
-/*Hamburger icoon stylen*/
+/* Hamburger icoon stylen */
 .hamburger {
-    position: absolute;
+    position: fixed; /* Zorgt voor een preciese locatie die niet afhankelijk is van de grid */
     top: 1em;
     left: 1em;
     display: flex;
-    flex-direction: column; /*Zorgt dat de drie streepjes onder elkaar komen*/
-    justify-content: space-between; /*Gelijke ruimte tussen de streepjes en de streepjes in een vierkant*/
+    flex-direction: column; /* Zorgt dat de drie streepjes onder elkaar komen */
+    justify-content: space-between; /* Gelijke ruimte tussen de streepjes en de streepjes in een vierkant */
     width: 30px;
     height: 25px;
     cursor: pointer;
-    z-index: 1001; /*Zet het hamburgermenu op laag 1001 (bovenaan)*/
+    z-index: 1001; /* Zet het hamburgericoon op laag 1001 (bovenaan) */
 }
 
-/*De streepjes*/
+/* De streepjes */
 .hamburger div {
     background-color: #000000;
-    height: 4px;
-    border-radius: 1em; /*Ronde randjes om streepjes hamburger icoon*/
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    height: 4px; /* individuele hoogte van de streepjes */
+    border-radius: 1em; /* Ronde randjes om streepjes hamburger icoon */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Zorgt ervoor dat de animatie in het begin langzaam gaat, in het midden wat sneller en aan het einde weer wat langzamer */
 }
 
 /*Menu stylen*/
 .menu {
-    position: fixed;
+    position: fixed; /* Zorgt voor een preciese locatie die niet afhankelijk is van de grid */
     top: 0.5em;
     left: 0.5em;
-    width: auto;
-    height: auto; /*Hoogte aanpassen aan de text in het menu*/
+    width: auto; /* Breedte aanpassen aan de text in het menu */
+    height: auto; /* Hoogte aanpassen aan de text in het menu */
     background-color: #e49273ff;
-    border: 1px solid #817878;
+    border: 0.1em solid #817878;
     box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.2);
-    transform: translateX(-110%); /*X naar links uit beeld schuiven*/
+    transform: translateX(-110%); /* Menu naar links uit beeld schuiven */
     transition: transform 0.3s ease;
-    border-radius: 0.5em; /*Hoeken ronding geven*/
-    overflow: hidden; /*Items buiten menu verbergen*/
-    z-index: 1000;
+    border-radius: 0.5em; /* Hoeken ronding geven */
+    overflow: hidden; /* Items buiten menu verbergen */
+    z-index: 1000; /* Zet het hamburgermenu op laag 1000 (1 na bovenste laag) */
 }
 
 .menu ul {
-    list-style: none; /*Puntjes/lijst aanduidende symbolen weglaten*/
-    padding: 1em 0.5em 0.5em; /*Zorgen dat text niet met hamburger icoon clipt*/
-    margin-right: 1em; /*zorgt dat de text niet gecentreerd staat (vind ik mooier)*/
+    list-style: none; /* Puntjes/lijst aanduidende symbolen weglaten */
+    padding: 1em 0.5em 0.5em; /* Zorgen dat text niet met hamburger icoon clipt */
+    margin-right: 1em; /* Zorgt dat de text niet gecentreerd staat (vind ik mooier) */
 }
 
 .menu ul li {
-    margin: 0.7em; /*ruimte tussen de linkjes in het menu*/
+    margin: 0.7em; /* Ruimte tussen de linkjes in het menu */
 }
 
 .menu ul li a {
-    text-decoration: none; /*Haalt de text decoratie van een linkje weg*/
+    text-decoration: none; /* Haalt de text decoratie van een linkje weg */
     color: #000000;
     font-size: 16px;
 }
 
-/*Laat menu zien wanneer actief*/
+/* Laat menu zien wanneer actief */
 .menu.active {
     transform: translateX(0);
 }
 
 /*Hamburger animatie voor wanneer actief*/
 .hamburger.active div:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg); /* Draait het bovenste streepje in de goede positie */
 }
 
 .hamburger.active div:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Laat het middelste streepje verdwijnen */
 }
 
 .hamburger.active div:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg); /* Draait het onderste streepje in de goede positie */
 }
 
-/*CSS Grid Container*/
+/* CSS Grid Container */
 .grid-container {
-    display: grid; /*Activeert CSS Grid*/
-    grid-template-areas:  /*Maakt de onderverdeling van de Grid */
+    display: grid; /* Activeert CSS Grid */
+    grid-template-areas:  /* Maakt de onderverdeling van de Grid */
         "header"
         "header"
         "header"
@@ -101,50 +101,50 @@ body {
         "main"
         "footer"
         "footer"; 
-    grid-template-rows: auto 1em 1fr auto;
-    height: 100vh; /*Stelt de hoogte van de grid gelijk aan de hoogte van het beeldscherm*/
-    overflow-y: auto;
+    grid-template-rows: auto 1em 1fr auto; /* Geeft hoogtes aan de header, bar, main, footer */
+    height: 100vh; /* Stelt de hoogte van de grid gelijk aan de hoogte van het beeldscherm */
+    overflow-y: auto; /* Zorgt ervoor dat je kan scrollen op de pagina */
 }
 
-/*Header*/
+/* Header */
 .header {
-    position: sticky;
-    top: 0;
+    position: sticky; /* Zorgt ervoor dat de header meebeweegt bij het scrollen */
+    top: 0; /* Zorgt ervoor dat de header bovenaan blijft bij scrollen */
     grid-area: header;
-    display: flex;
+    display: flex; /* Zorgt ervoor dat de tekst op de goede plek blijft */
     align-items: center; /*Verticaal centreren*/
     justify-content: center; /*Horizontaal centreren*/
     padding: 2em;
-    max-height: 5em;
+    max-height: 5em; /* Zorgt ervoor dat de header niet te groot wordt */
     font-size: 1.5rem;
     background-color: #0081a7ff;
     color: #000000;
-    overflow: hidden; /*Zorgt ervoor dat delen van de header die de oorsprongkelijke afmeting van de header overschrijden niet zichtbaar zijn*/
-    z-index: 101;
+    overflow: hidden; /* Zorgt ervoor dat delen van de header die de oorsprongkelijke afmeting van de header overschrijden niet zichtbaar zijn */
+    z-index: 101; /* Zet de header op laag 101 (boven de bar en de main, maar onder het hamburger icoon en menu) */
  }
  
- /*Bar*/
+ /* Bar */
  .bar {
-    position: sticky;
-    top: 6em;
+    position: sticky; /* Zorgt ervoor dat de bar meebeweegt bij het scrollen */
+    top: 6em; /* Zorgt ervoor dat de bar precies tegen de header aan staat */
     grid-area: bar;
     background-color: #000000;
     color: #000000;
     height: 1em;
-    z-index: 100;
+    z-index: 100; /* Zet de bar boven de main, maar onder de header en het hamburger menu */
  }
  
- /*Main Content*/
+ /* Main Content */
  .main {
     grid-area: main;
     background-color: #a6b1e1ff;
     padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
  }
 
 /* Container voor artikelen */
 .articles-container {
-    display: grid; /* Grid layout voor artikelen. Dit is dus een grid IN een grid! Dat kan :) */
+    display: grid; /* Grid layout voor artikelen. */
     grid-template-columns: 1fr 1fr; /* 2 gelijke kolommen */
     row-gap: 8em;
     column-gap: 20em;
@@ -154,9 +154,9 @@ body {
     height: 12em;
     background-color: #e49273ff;
     padding: 10px;
-    border: 1px solid #817878;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 0.08em solid #817878;
+    border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
     text-align: center;
 }
 
@@ -164,9 +164,9 @@ body {
     grid-row: span 2; /* Laat afbeelding 1 over 2 rijen strekken */
     height: 34em;
     background-color: #4d9de0ff;
-    border: 1px solid #817878;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 0.08em solid #817878;
+    border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
     text-align: center;
 }
 
@@ -177,11 +177,11 @@ body {
     border-radius: 5px; /* Zorg dat de afbeelding dezelfde afronding heeft als de container */
 }
 
- /*Footer*/
+ /* Footer */
 .footer {
     grid-area: footer;
     padding: 10px;
-    text-align: center; /*Centreert text horizontaal*/
+    text-align: center; /* Centreert text horizontaal */
     background-color: #274029ff;
     color: white;
 }
