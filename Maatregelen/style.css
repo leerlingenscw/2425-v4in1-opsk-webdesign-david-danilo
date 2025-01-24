@@ -151,8 +151,8 @@ body {
 }
 
 .artikel_1, .artikel_2, .artikel_3, .artikel_4 {
-    height: 8rem;
-    width: 30rem;
+    height: 12rem;
+    width: 55rem;
     background-color: #e49273ff;
     padding: 10px;
     border: 0.08em solid #817878;
@@ -163,8 +163,8 @@ body {
 }
 
 .afbeelding_1, .afbeelding_2, .afbeelding_3, .afbeelding_4 {
-    height: 14em;
-    width: 20em;
+    height: 25rem;
+    width: 35rem;
     background-color: #4d9de0ff;
     border: 0.08em solid #817878;
     border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
