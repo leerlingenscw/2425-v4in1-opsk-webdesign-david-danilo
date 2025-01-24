@@ -96,6 +96,10 @@
                         <td>3</td>
                         <td>Wij behouden het recht om wijzigingen aan te brengen.</td>
                     </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Code validators zijn vormen van propaganda en complottheorieën</td>
+                    </tr>
                 </tbody>
             </table>
             <button id="voorwaarden-close">Sluiten</button>
@@ -106,28 +110,35 @@
     <!-- Cookie Popup -->
     <div id="cookie-popup" class="cookie-popup hidden">
         <div class="cookie-content">
-        <h2>Cookies</h2>
-        <p>We gebruiken cookies om je ervaring te verbeteren. Kies welke cookies je wilt toestaan:</p>
-        <div class="cookie-option">
-            <label>
-            <input type="checkbox" checked disabled> Functionele cookies (verplicht)
-            </label>
-        </div>
-        <div class="cookie-option">
-            <label>
-            <input type="checkbox"> Analytische cookies
-            </label>
-        </div>
-        <div class="cookie-option">
-            <label>
-            <input type="checkbox"> Advertentie cookies
-            </label>
-        </div>
-        <button id="cookie-accept">Accepteren</button>
-        <button id="cookie-decline">Weigeren</button>
+            <h2>Cookies</h2>
+            <p>We gebruiken cookies om je ervaring te verbeteren. Kies welke cookies je wilt toestaan:</p>
+            <div class="cookie-option">
+                <label>
+                    <input type="checkbox" checked disabled> Functionele cookies (verplicht)
+                </label>
+            </div>
+            <div class="cookie-option">
+                <label>
+                    <input type="checkbox" class="optional-cookie"> Analytische cookies
+                </label>
+            </div>
+            <div class="cookie-option">
+                <label>
+                    <input type="checkbox" class="optional-cookie"> Advertentie cookies
+                </label>
+            </div>
+            <div class="cookie-option">
+                <label>
+                    <input type="checkbox" id="cookiemonster"> Cookiemonster
+                </label>
+            </div>
+            <button id="cookie-accept">Accepteren</button>
+            <button id="cookie-decline">Weigeren</button>
         </div>
     </div>
+
 </body>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Cookie-popup functionaliteit
@@ -135,6 +146,8 @@
         const cookiePopup = document.getElementById("cookie-popup");
         const acceptButton = document.getElementById("cookie-accept");
         const declineButton = document.getElementById("cookie-decline");
+        const cookiemonsterCheckbox = document.getElementById("cookiemonster");
+        const optionalCookies = document.querySelectorAll(".optional-cookie");
 
         cookieButton.addEventListener("click", () => {
             cookiePopup.classList.remove("hidden");
@@ -148,6 +161,19 @@
         declineButton.addEventListener("click", () => {
             alert("Cookies geweigerd!");
             cookiePopup.classList.add("hidden");
+        });
+
+        // Cookiemonster functionaliteit
+        cookiemonsterCheckbox.addEventListener("change", (event) => {
+            const isChecked = event.target.checked;
+
+            if (isChecked) {
+                // Als Cookiemonster wordt aangevinkt, zet alle optionele cookies aan
+                optionalCookies.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+            }
+            // Als Cookiemonster wordt uitgevinkt, gebeurt er niets met de andere checkboxen
         });
 
         // Privacy-popup functionaliteit
@@ -177,5 +203,6 @@
         });
     });
 </script>
+
 </html>
 
