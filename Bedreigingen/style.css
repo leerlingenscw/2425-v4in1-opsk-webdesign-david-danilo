@@ -157,23 +157,37 @@ body {
     border: 0.08em solid #817878;
     border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
-    text-align: center;
+    display: flex; /* Flexbox voor centreren */
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center; /* Verticaal centreren */
+    text-align: center; /* Optioneel, tekst centreren */
+    overflow-wrap: break-word; /* Breekt lange woorden af */
+    word-wrap: break-word; /* Voor oudere browsers */
+    overflow: hidden; /* Verbergt overloop (als nodig) */
 }
 
-.afbeelding_1, .afbeelding_2 {
+.afbeelding_1{
     grid-row: span 2; /* Laat afbeelding 1 over 2 rijen strekken */
-    height: 34em;
-    background-color: #4d9de0ff;
+    height: 35em;
+    background-color: #fff;
     border: 0.08em solid #817878;
     border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
-    text-align: center;
+}
+
+.afbeelding_2{
+    grid-row: span 2; /* Laat afbeelding 1 over 2 rijen strekken */
+    height: 35em;
+    background-color: #83D0F4;
+    border: 0.08em solid #817878;
+    border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
 }
 
 .afbeelding_1 img, .afbeelding_2 img {
     width: 100%; /* Zorgt dat de afbeelding de breedte van de container vult */
     height: 100%; /* Zorgt dat de afbeelding de hoogte van de container vult */
-    object-fit: cover; /* Schaal de afbeelding proportioneel en vul de container */
+    object-fit: scale-down; /* Schaal de afbeelding proportioneel en vul de container */
     border-radius: 5px; /* Zorg dat de afbeelding dezelfde afronding heeft als de container */
 }
 

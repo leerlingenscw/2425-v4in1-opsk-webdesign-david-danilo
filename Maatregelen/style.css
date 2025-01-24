@@ -144,6 +144,7 @@ body {
  .articles-container {
     display: grid; /* Activeert CSS Grid */
     grid-template-columns: 1fr 1fr; /* Twee gelijke kolommen */
+    grid-auto-rows: minmax(12rem, auto); /* Rijen groeien afhankelijk van de inhoud */
     row-gap: 1.5rem; /* Ruimte tussen rijen */
     column-gap: 1rem; /* Ruimte tussen kolommen */
     justify-items: center; /* Centreert de inhoud horizontaal */
@@ -151,7 +152,7 @@ body {
 }
 
 .artikel_1, .artikel_2, .artikel_3, .artikel_4 {
-    height: 12rem;
+    min-height: 12rem;
     width: 55rem;
     background-color: #e49273ff;
     padding: 10px;
@@ -160,6 +161,11 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
     display: flex; /* Flexbox voor centreren */
     justify-content: center; /* Horizontaal centreren */
+    align-items: center; /* Verticaal centreren */
+    text-align: center; /* Optioneel, tekst centreren */
+    overflow-wrap: break-word; /* Breekt lange woorden af */
+    word-wrap: break-word; /* Voor oudere browsers */
+    overflow: hidden; /* Verbergt overloop (als nodig) */
 }
 
 .afbeelding_1, .afbeelding_2, .afbeelding_3, .afbeelding_4 {

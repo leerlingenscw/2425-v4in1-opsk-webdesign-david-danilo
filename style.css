@@ -176,18 +176,179 @@ body {
 }
 
 .copyright{
+   margin-top: 0.7em;
+   color: #000000ff;
+   opacity: 0.6;
+   margin-right: 10em;
+}
+
+/* Algemene voorwaarden knop */
+.algemene-voorwaarden{
+   opacity: 0.6;
    margin-right: 10em;
    background-color: #274029ff;
    padding: 10px 20px;
-   border: none;
+   border: thick double rgb(18, 26, 19);
    border-radius: 5px;
    cursor: pointer;
 }
 
-.algemene-voorwaarden{
-   margin-right: 10em;
+/* Algemene Voorwaarden Popup */
+.voorwaarden-popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 200;
 }
 
-.privacy{
-   margin-right: 10em
+.voorwaarden-content {
+   background: #fff;
+   padding: 2em;
+   border-radius: 10px;
+   text-align: center;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.voorwaarden-content h2 {
+   margin-top: 0;
+}
+
+.voorwaarden-content table {
+   margin: 1em auto;
+   border-collapse: collapse;
+   width: 80%;
+   text-align: left;
+}
+
+.voorwaarden-content table th, 
+.voorwaarden-content table td {
+   border: 1px solid #ddd;
+   padding: 8px;
+}
+
+.voorwaarden-content table th {
+   background-color: #f4f4f4;
+   font-weight: bold;
+}
+
+.hidden {
+   display: none;
+}
+
+
+/* Privacy knop */
+.privacy{
+   opacity: 0.6;
+   margin-right: 10em;
+   background-color: #274029ff;
+   padding: 10px 20px;
+   border: thick double rgb(18, 26, 19);
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+/* Privacy Popup */
+.privacy-popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 200;
+ }
+ 
+ .privacy-content {
+   background: #fff;
+   padding: 2em;
+   border-radius: 10px;
+   text-align: center;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .privacy-content h2 {
+   margin-top: 0;
+ }
+ 
+ .privacy-content p {
+   font-size: 1rem;
+   margin: 1em 0;
+ }
+ 
+ .privacy-content a {
+   color: #0081a7ff;
+   text-decoration: underline;
+ }
+ 
+ .hidden {
+   display: none;
+ }
+ 
+/* Cookies knop */
+.cookies {
+   opacity: 0.6;
+   background-color: #274029ff;
+   padding: 10px 20px;
+   border: thick double rgb(18, 26, 19);
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.copyright:hover, .algemene-voorwaarden:hover, .privacy:hover, .cookies:hover {
+   opacity: 1;
+}
+
+/* Cookie Popup */
+.cookie-popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 200;
+ }
+ 
+ .cookie-content {
+   background: #fff;
+   padding: 2em;
+   border-radius: 10px;
+   text-align: center;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .cookie-content h2 {
+   margin-top: 0;
+ }
+ 
+ .cookie-option {
+   margin: 1em 0;
+   text-align: left;
+ }
+ 
+ .cookie-option label {
+   font-size: 1rem;
+   display: flex;
+   align-items: center;
+ }
+ 
+ .cookie-option input {
+   margin-right: 10px;
+ }
+ 
+ .hidden {
+   display: none;
+ }
+ 

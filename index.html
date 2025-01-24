@@ -54,13 +54,130 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="flex-container">
-                <button class="copyright">&copy; David en Danilo</button>
+                <div class="copyright">&copy; David en Danilo</div>
                 <button class="algemene-voorwaarden">algemene voorwaarden</button>
                 <button class="privacy">privacy</button>
                 <button class="cookies">cookies</button>
             </div>
         </footer>
     </div>
+
+    <!-- Privacy Popup -->
+    <div id="privacy-popup" class="privacy-popup hidden">
+        <div class="privacy-content">
+            <h2>Privacybeleid</h2>
+            <p>Wij hebben voor geclassificeerde redenen cameras in jouw huis. Voor meer informatie, bel onze niet bestaande klantenservice.</p>
+            <button id="privacy-close">Sluiten</button>
+        </div>
+    </div>
+  
+    <!-- Algemene Voorwaarden Popup -->
+    <div id="voorwaarden-popup" class="voorwaarden-popup hidden">
+        <div class="voorwaarden-content">
+            <h2>Algemene Voorwaarden</h2>
+            <p>Hier zijn onze algemene voorwaarden:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Voorwaarde</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Gebruikers moeten de website respectvol gebruiken.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ongeoorloofd kopiëren van inhoud is verboden.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Wij behouden het recht om wijzigingen aan te brengen.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="voorwaarden-close">Sluiten</button>
+        </div>
+    </div>
+
+
+    <!-- Cookie Popup -->
+    <div id="cookie-popup" class="cookie-popup hidden">
+        <div class="cookie-content">
+        <h2>Cookies</h2>
+        <p>We gebruiken cookies om je ervaring te verbeteren. Kies welke cookies je wilt toestaan:</p>
+        <div class="cookie-option">
+            <label>
+            <input type="checkbox" checked disabled> Functionele cookies (verplicht)
+            </label>
+        </div>
+        <div class="cookie-option">
+            <label>
+            <input type="checkbox"> Analytische cookies
+            </label>
+        </div>
+        <div class="cookie-option">
+            <label>
+            <input type="checkbox"> Advertentie cookies
+            </label>
+        </div>
+        <button id="cookie-accept">Accepteren</button>
+        <button id="cookie-decline">Weigeren</button>
+        </div>
+    </div>
 </body>
 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Cookie-popup functionaliteit
+        const cookieButton = document.querySelector(".cookies");
+        const cookiePopup = document.getElementById("cookie-popup");
+        const acceptButton = document.getElementById("cookie-accept");
+        const declineButton = document.getElementById("cookie-decline");
+
+        cookieButton.addEventListener("click", () => {
+            cookiePopup.classList.remove("hidden");
+        });
+
+        acceptButton.addEventListener("click", () => {
+            alert("Cookies geaccepteerd!");
+            cookiePopup.classList.add("hidden");
+        });
+
+        declineButton.addEventListener("click", () => {
+            alert("Cookies geweigerd!");
+            cookiePopup.classList.add("hidden");
+        });
+
+        // Privacy-popup functionaliteit
+        const privacyButton = document.querySelector(".privacy");
+        const privacyPopup = document.getElementById("privacy-popup");
+        const privacyClose = document.getElementById("privacy-close");
+
+        privacyButton.addEventListener("click", () => {
+            privacyPopup.classList.remove("hidden");
+        });
+
+        privacyClose.addEventListener("click", () => {
+            privacyPopup.classList.add("hidden");
+        });
+
+        // Algemene voorwaarden-popup functionaliteit
+        const voorwaardenButton = document.querySelector(".algemene-voorwaarden");
+        const voorwaardenPopup = document.getElementById("voorwaarden-popup");
+        const voorwaardenClose = document.getElementById("voorwaarden-close");
+
+        voorwaardenButton.addEventListener("click", () => {
+            voorwaardenPopup.classList.remove("hidden");
+        });
+
+        voorwaardenClose.addEventListener("click", () => {
+            voorwaardenPopup.classList.add("hidden");
+        });
+    });
+</script>
+  

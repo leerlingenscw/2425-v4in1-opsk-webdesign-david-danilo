@@ -149,7 +149,17 @@ body {
     column-gap: 9rem;
 }
 
-.afbeelding_1 img, .afbeelding_2 img, .afbeelding_3 img, .afbeelding_4 img {
+.afbeelding_1, .afbeelding_2, .afbeelding_3, .artikel_1, .artikel_2, .artikel_3 {
+    display: flex; /* Flexbox voor centreren */
+    justify-content: center; /* Horizontaal centreren */
+    align-items: center; /* Verticaal centreren */
+    text-align: center; /* Optioneel, tekst centreren */
+    overflow-wrap: break-word; /* Breekt lange woorden af */
+    word-wrap: break-word; /* Voor oudere browsers */
+    overflow: hidden; /* Verbergt overloop (als nodig) */
+}
+
+.afbeelding_1 img, .afbeelding_2 img, .afbeelding_3 img {
     width: 100%; /* Zorgt dat de afbeelding de breedte van de container vult */
     height: 100%; /* Zorgt dat de afbeelding de hoogte van de container vult */
     object-fit: cover; /* Schaal de afbeelding proportioneel en vul de container */
@@ -165,7 +175,6 @@ body {
     border: 0.08em solid #817878;
     border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
-    text-align: center;
 }
 
 .afbeelding_1 {
@@ -176,7 +185,6 @@ body {
     border: 0.08em solid #817878;
     border-radius: 5px; /* Zorgt voor een kleine ronding op de hoeken */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Voegt schaduw toe  */
-    text-align: center;
 }
 
 .artikel_2 {
