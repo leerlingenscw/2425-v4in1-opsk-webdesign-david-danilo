@@ -146,8 +146,8 @@ body {
 .articles-container {
     display: grid; /* Grid layout voor artikelen. Dit is dus een grid IN een grid! Dat kan :) */
     grid-template-columns: 1fr 1fr; /* 2 gelijke kolommen */
-    row-gap: 8em;
-    column-gap: 20em;
+    row-gap: 8rem;
+    column-gap: 9rem;
 }
 
 .artikel_1, .artikel_2, .artikel_3, .artikel_4 {
